@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name...">
+        <button id="searchBtn">Search</button>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="today">Today</button>
+            <button class="tab-btn" data-tab="forecast">5-Day Forecast</button>
+        </div>
+
+        <div id="today" class="tab-content active">
+            <div id="todayWeather"></div>
+            <div id="hourlyWeather"></div>
+            <div id="nearbyCities"></div>
+        </div>
+
+        <div id="forecast" class="tab-content">
+            <div id="fiveDayWeather"></div>
+            <div id="detailedDayWeather"></div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

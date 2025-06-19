@@ -1,0 +1,109 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #f0f4ff, #e4f0fa);
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #d0d0d0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 130px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fdfdfd url('https://win98icons.alexmeub.com/icons/png/search-0.png') no-repeat 8px center;
+    background-size: 16px;
+    padding-left: 30px;
+    color: #333;
+}
+
+button {
+    padding: 10px 14px;
+    font-size: 14px;
+    background: #0078d4;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #005fa3;
+}
+
+.tabs {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tab-btn {
+    padding: 10px 18px;
+    background: #e8f0fe;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.tab-btn.active {
+    background: #1a73e8;
+    color: white;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    background: #fdfdfd;
+    padding: 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#todayWeather, #hourlyWeather, #nearbyCities, #fiveDayWeather, #detailedDayWeather {
+    margin-bottom: 20px;
+}
+
+h2, h3, p {
+    margin: 5px 0;
+    color: #202124;
+}
+
+img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+img.weather-icon {
+    width: 40px;
+    height: 40px;
+    image-rendering: pixelated;
+}
+
+.weather-block {
+    border-bottom: 1px dashed #ccc;
+    padding: 10px 0;
+}
