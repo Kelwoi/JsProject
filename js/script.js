@@ -36,6 +36,17 @@ $(document).ready(function () {
         }
     });
 
+    function fetchNearbyCitiesWeather(lat, lon) {
+        $.get(`https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=5&appid=${apiKey}&units=metric`, function (data) {
+            let html = '<h3>Nearby Cities</h3>';
+            data.list.forEach(city => {
+                const emoji = getEmoji(city.weather[0].icon);
+                html += `<p>${emoji} ${city.name}: ${city.main.temp}°C</p>`;
+            });
+            $('#nearbyCities').html(html);
+        });
+    }
+
     function fetchWeather(city) {
         $.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`, function (data) {
             const emoji = getEmoji(data.weather[0].icon);
@@ -47,6 +58,7 @@ $(document).ready(function () {
                 <p>Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}</p>
                 <p>Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}</p>
             `);
+            fetchNearbyCitiesWeather(data.coord.lat, data.coord.lon);
         }).fail(function () {
             $('#todayWeather').html('<p>City not found or error loading data.</p>');
         });
